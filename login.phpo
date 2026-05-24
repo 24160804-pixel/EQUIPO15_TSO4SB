@@ -1,0 +1,52 @@
+<?php
+session_start(); // Inicia la sesión
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibe las variables del formulario
+    $email = $_POST['correo'];
+    $pass = $_POST['password'];
+
+    // 1. Administrador
+    if ($email == "24160804@itoaxaca.edu.mx" && $pass == "24160804TSO") {
+        $_SESSION['usuario'] = $email;
+        $_SESSION['rol'] = 'admin';
+        header("Location: admin.php");
+        exit();
+    } 
+    // 2. Espectador
+    else if ($email == "espectador@itoaxaca.edu.mx" && $pass == "espectador123") {
+        $_SESSION['usuario'] = $email;
+        $_SESSION['rol'] = 'espectador';
+        header("Location: admin.php");
+        exit();
+    } 
+    else {
+        $error = "Credenciales incorrectas. <a href='login.php'>Volver</a>";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso al Sistema - Tony Superpapelerías</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container" style="max-width: 400px; margin: 100px auto;">
+        <h2>Iniciar Sesión</h2>
+        
+        <?php if(isset($error)) { echo "<p class='error-msg'>$error</p>"; } ?>
+        
+        <form method="POST">
+            <label>Correo Electrónico:</label><br>
+            <input type="email" name="correo" required style="width: 90%; margin-bottom: 15px;"><br>
+            
+            <label>Contraseña:</label><br>
+            <input type="password" name="password" required style="width: 90%; margin-bottom: 15px;"><br><br>
+            
+            <button type="submit" class="btn btn-add" style="width: 100%;">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
