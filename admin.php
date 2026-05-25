@@ -11,57 +11,61 @@ if (!isset($_SESSION['usuario'])) {
 $result = mysqli_query($conn, "SELECT * FROM articulos");
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Administración de Inventario - TONY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div>
-        <form action="insert_artc.php" method="POST">
-        <h1>AGREGAR UN ARTÍCULO</h1>
+    <nav class="navbar">
+        <div class="logo">Panel de <span class="text-green">Inventario</span></div>
+        <ul class="nav-links">
+            <li><a href="index.php">Ver Sitio Público</a></li>
+            <li><a href="login.php" class="text-pink">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
 
-            <input type="text" name="nombre" placeholder="Nombre">
-            <input type="number" name="precio" placeholder="Precio">
-            <input type="number" name="stock" placeholder="Stock">
+    <section class="crud-section">
+        <div class="crud-container">
+            <div class="form-side card">
+                <h3 class="text-blue">Registrar Artículo</h3>
+                <form action="insert_artc.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="number" name="precio" placeholder="Precio" required>
+                    <input type="number" name="stock" placeholder="Stock" required>
+                    <input type="submit" value="Guardar en Inventario" class="btn btn-green">
+                </form>
+            </div>
 
-            <input type="submit" value="Agregar Producto">
-        </form>
-    </div>
-
-    <div>
-        <h2>Articulos</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = mysqli_fetch_array($result)): ?>
-                    <tr>
-                        <th><?= $row['id_articulo']   ?></th>
-                        <th><?= $row['nombre']   ?></th>
-                        <th><?= $row['precio']   ?></th>
-                        <th><?= $row['stock']   ?></th>
-
-                        <th><a href="update.php?id=<?= $row['id_articulo']   ?>">Editar</a></th>
-                        <th><a href="delete_artcl.php?id=<?= $row['id_articulo']   ?>">Eliminar</a></th>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-
-        </table>
-    </div>
+            <div class="table-side card">
+                <table class="tony-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = mysqli_fetch_array($result)): ?>
+                            <tr>
+                                <td><?= $row['id_articulo'] ?></td>
+                                <td><?= $row['nombre'] ?></td>
+                                <td>$<?= $row['precio'] ?></td>
+                                <td><?= $row['stock'] ?></td>
+                                <td class="actions">
+                                    <a href="update.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-blue">Editar</a>
+                                    <a href="delete_artcl.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-pink">Eliminar</a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>
