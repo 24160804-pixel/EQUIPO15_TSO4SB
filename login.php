@@ -29,24 +29,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Acceso al Sistema - Tony Superpapelerías</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Acceso Administrativo - TONY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container" style="max-width: 400px; margin: 100px auto;">
-        <h2>Iniciar Sesión</h2>
-        
-        <?php if(isset($error)) { echo "<p class='error-msg'>$error</p>"; } ?>
-        
-        <form method="POST">
-            <label>Correo Electrónico:</label><br>
-            <input type="email" name="correo" required style="width: 90%; margin-bottom: 15px;"><br>
-            
-            <label>Contraseña:</label><br>
-            <input type="password" name="password" required style="width: 90%; margin-bottom: 15px;"><br><br>
-            
-            <button type="submit" class="btn btn-add" style="width: 100%;">Entrar</button>
-        </form>
+<body class="bg-light">
+    <div class="login-container">
+        <div class="card login-card">
+            <h2 class="text-blue">Panel de Gestión</h2>
+            <form action="login.php" method="POST">
+                <input type="email" name="correo" placeholder="tunumcontrol@itoaxaca.edu.mx" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="submit" value="Entrar" class="btn btn-blue">
+            </form>
+            <?php if($error != ""): ?>
+                <p class="error-msg"><?= $error ?></p>
+            <?php endif; ?>
+            <br>
+            <a href="index.php" style="font-size: 0.8rem;">Volver al inicio</a>
+        </div>
     </div>
 </body>
 </html>

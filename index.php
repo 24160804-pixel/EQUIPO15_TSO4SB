@@ -2,48 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tony Superpapelerías - Refacciones</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Papelerías TONY - Inicio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Tony Superpapelerías</h1>
-            <p class="subtitle">Líder Nacional en Precios Bajos</p>
-<nav class="nav-box">
-    <a href="index.php" class="nav-link">Inicio</a>
-    <span class="separator">|</span>
-    <a href="login.php" class="nav-link">Administración</a>
-</nav>
-        </header>
+    <nav class="navbar">
+        <div class="logo">Papelerías <span class="text-green">TONY</span></div>
+        <ul class="nav-links">
+            <li><a href="#mision">Misión y Visión</a></li>
+            <li><a href="#valores">Valores</a></li>
+            <li><a href="login.php" class="btn-sm btn-blue">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
 
-        <section class="cards-container">
-            <div class="card mission-card">
-                <h2>Misión</h2>
-                <p>Comercializar artículos de papelería, oficina, escolar y cómputo con la más alta calidad y al mejor precio del mercado.</p>
+    <header class="hero">
+        <h1>Bienvenido a Papelerías TONY</h1>
+        <p>Todo lo que necesitas para tu oficina y escuela en un solo lugar.</p>
+    </header>
+
+    <section id="mision" class="mv-section">
+        <div class="mv-container">
+            <div class="card border-blue">
+                <h3 class="text-blue">Nuestra Misión</h3>
+                <p>Ofrecer el surtido más amplio de artículos de papelería con la mejor calidad y precio del mercado.</p>
+            </div>
+            <div class="card border-green">
+                <h3 class="text-green">Nuestra Visión</h3>
+                <p>Ser la cadena líder en soluciones escolares y de oficina en todo el país para el año 2030.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="valores" class="values-section bg-light">
+        <h2 class="section-title text-blue">Nuestros Valores</h2>
+        <div class="crud-container" style="justify-content: center; gap: 20px;">
+            <div class="card"><strong>Honestidad</strong></div>
+            <div class="card"><strong>Servicio</strong></div>
+            <div class="card"><strong>Innovación</strong></div>
+            <div class="card"><strong>Compromiso</strong></div>
+        </div>
+    </section>
+    <section id="nuevo-apartado" class="mv-section">
+        <h2 class="section-title text-blue" style="text-align: center;">Nuestros Productos Destacados</h2>
+        
+        <div class="mv-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+            
+            <div class="card border-blue" style="width: 280px; text-align: center; padding: 20px;">
+                <img src="imagenes/hojas.png" alt="Cuadernos" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 class="text-blue">Regreso a Clases</h3>
+                <p>Encuentra los mejores cuadernos, mochilas y útiles escolares al mejor precio.</p>
+                <a href="#" class="btn-sm btn-blue" style="display: inline-block; margin-top: 15px;">Ver Ofertas</a>
             </div>
 
-            <div class="card vision-card">
-                <h2>Visión</h2>
-                <p>Consolidarse como la empresa líder en el mercado papelero de México y Latinoamérica en ventas y rentabilidad, manteniendo una cobertura nacional total.</p>
+            <div class="card border-green" style="width: 280px; text-align: center; padding: 20px;">
+                <img src="imagenes/laptop.png" alt="Oficina" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 class="text-green">Mobiliario de Oficina</h3>
+                <p>Sillas ergonómicas, escritorios y todo lo necesario para tu espacio de trabajo.</p>
+                <a href="#" class="btn-sm btn-blue" style="display: inline-block; margin-top: 15px;">Ver Catálogo</a>
             </div>
 
-            <div class="card history-card">
-                <h2>Nuestra Historia</h2>
-                <div class="scroll-history">
-                    <p><strong>TONY</strong> inicia operaciones en el año 1959 en la Ciudad de México con la apertura de la primera Papelería TONY por Don Ramón Chedraui Caram. A través de los años adquiere un fuerte impulso con la dirección de Antonio Chedraui Mafúd, actual presidente de Grupo Tony, logrando un fuerte crecimiento de su principal marca, Tony Súper Papelerías, a lo largo de todo el país a partir de los años setenta. Siempre con el objetivo de atender de una manera más especializada las necesidades del mercado y distinguiéndose desde un inicio por ofrecer la más amplia variedad de artículos de los mejores fabricantes y siempre a los mejores precios.</p>
-                    <p>Durante los primeros años, TONY busca el afianzamiento del mercado a través de la cobertura de rutas de distribución teniendo como base la ciudad de Veracruz y como primeros destinos las zonas circunvecinas al Puerto de Veracruz y el estado de Oaxaca. En 1975 empieza su primera expansión y establece en Tampico un almacén desde el cual se cubren también los estados de San Luis Potosí e Hidalgo. Para el año de 1976, se abre una sucursal en Mérida, Yucatán para dar servicio al Estado y a sus vecinos de Quintana Roo y Campeche.</p>
-                    <p>Unos años más tarde, se abren otros almacenes en la Ciudad de México y posteriormente en Tabasco y Puebla cubriendo así la mayor parte del sureste mexicano, teniendo influencia en las zonas de Chiapas, Oaxaca, Tlaxcala, Hidalgo, Morelos y parte de Guerrero.</p>
-                    <p>Durante los años 80’s y 90’s se producen las aperturas de 17 almacenes en las ciudades de Córdoba, Puebla, Coatzacoalcos, Ciudad de México, Poza Rica, Tlalnepantla, Orizaba, San Luis Posití, Tapachula, Acayucan, León, Irapuato, Toluca, Iztapalapa, Xalapa, Oaxaca y 3 almacenes más en Guadalajara.</p>
-                    <p>Con la llegada del nuevo milenio y durante su primera década se abren al público 30 almacenes tanto en el área metropolitana de la CDMX, como en los estados de Querétaro, Chiapas, Tabasco, Puebla, Nuevo León, Oaxaca, Campeche, Guanajuato, Aguascalientes, Veracruz, Michoacán, Sinaloa, Quintana Roo, Morelos, Coahuila, Tamaulipas, Nayarit, Guerrero, Yucatán, Hidalgo, San Luis Potosí y Tlaxcala.</p>
-                    <p>A partir del 2010 y hasta la fecha se han abierto más de 85 sucursales, llegando así a más de 140 almacenes a lo largo de toda la República Mexicana. Confirmándonos a todos que es la fuerza de su gente la que ha hecho de TONY la empresa de papelería más grande e importante del país.</p>
-                </div>
+            <div class="card border-blue" style="width: 280px; text-align: center; padding: 20px;">
+                <img src="imagenes/cuaderno.png" alt="Arte y Dibujo" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 class="text-blue">Arte y Creatividad</h3>
+                <p>Pinturas, pinceles, lienzos y materiales profesionales para artistas.</p>
+                <a href="#" class="btn-sm btn-blue" style="display: inline-block; margin-top: 15px;">Descubrir más</a>
             </div>
-        </section>
 
-        <footer>
-            <p>&copy; 2026 Tony Superpapelerías Oaxaca</p>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Papelerías TONY. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
