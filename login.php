@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } 
     // 2. Espectador
-    else if ($email == "espectador@itoaxaca.edu.mx" && $pass == "espectador123") {
+    else if ($email == "carlos@itoaxaca.edu.mx" && $pass == "carlos") {
         $_SESSION['usuario'] = $email;
         $_SESSION['rol'] = 'espectador';
         header("Location: admin.php");
