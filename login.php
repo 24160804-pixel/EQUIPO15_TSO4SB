@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="card login-card">
             <h2 class="text-blue">Panel de Gestión</h2>
             <form action="login.php" method="POST">
-                <input type="email" name="usuario" placeholder="tunumcontrol@itoaxaca.edu.mx" required>
+                <input type="email" name="correo" placeholder="tunumcontrol@itoaxaca.edu.mx" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
                 <input type="submit" value="Entrar" class="btn btn-blue">
             </form>
