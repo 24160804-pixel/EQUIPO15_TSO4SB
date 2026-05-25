@@ -11,62 +11,57 @@ if (!isset($_SESSION['usuario'])) {
 $result = mysqli_query($conn, "SELECT * FROM articulos");
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Inventario - Tony Superpapelerías</title>
-    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="container">
-        <header style="display: flex; justify-content: space-between; align-items: center;">
-            <h2>Tony Superpapelerías - Inventario</h2>
-            <a href="logout.php" style="color: #d32f2f; text-decoration: none; font-weight: bold;">Cerrar Sesión</a>
-        </header>
+    <div>
+        <form action="insert_artc.php" method="POST">
+        <h1>AGREGAR UN ARTÍCULO</h1>
 
-        <p>Sesión activa: <strong><?php echo $_SESSION['usuario']; ?></strong> | Rol: <strong><?php echo $_SESSION['rol']; ?></strong></p>
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="number" name="precio" placeholder="Precio">
+            <input type="number" name="stock" placeholder="Stock">
 
-        <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-            <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                <h3>Añadir Nuevo Producto</h3>
-                <form action="insertar.php" method="POST" style="border: none; padding: 0;">
-                    <input type="text" name="nombre" placeholder="Producto" required>
-                    <input type="number" step="0.01" name="precio" placeholder="Precio" required>
-                    <input type="number" name="stock" placeholder="Stock" required>
-                    <button type="submit" class="btn btn-add">Guardar Producto</button>
-                </form>
-            </div>
-        <?php endif; ?>
+            <input type="submit" value="Agregar Producto">
+        </form>
+    </div>
 
+    <div>
+        <h2>Articulos</h2>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Descripción</th>
+                    <th>Nombre</th>
                     <th>Precio</th>
-                    <th>Existencias</th>
-                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-                        <th>Acciones</th>
-                    <?php endif; ?>
+                    <th>Stock</th>
+
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = mysqli_fetch_assoc($result)): ?>
-                <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['nombre']; ?></td>
-                    <td>$<?php echo number_format($row['precio'], 2); ?></td>
-                    <td><?php echo $row['stock']; ?></td>
-                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-                    <td>
-                        <a href="editar.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">Editar</a>
-                        <a href="eliminar.php?id=<?php echo $row['id']; ?>" class="btn btn-delete" onclick="return confirm('¿Eliminar?')">Eliminar</a>
-                    </td>
-                    <?php endif; ?>
-                </tr>
+                <?php while ($row = mysqli_fetch_array($result)): ?>
+                    <tr>
+                        <th><?= $row['id_articulo']   ?></th>
+                        <th><?= $row['nombre']   ?></th>
+                        <th><?= $row['precio']   ?></th>
+                        <th><?= $row['stock']   ?></th>
+
+                        <th><a href="update.php?id=<?= $row['id_articulo']   ?>">Editar</a></th>
+                        <th><a href="delete_artcl.php?id=<?= $row['id_articulo']   ?>">Eliminar</a></th>
+                    </tr>
                 <?php endwhile; ?>
             </tbody>
+
         </table>
     </div>
 </body>
+
 </html>
