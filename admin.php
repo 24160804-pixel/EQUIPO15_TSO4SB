@@ -30,7 +30,7 @@ $result = mysqli_query($conn, "SELECT * FROM articulos");
         <div class="crud-container">
             <div class="form-side card">
                 <h3 class="text-blue">Registrar Artículo</h3>
-                <form action="insert_artc.php" method="POST">
+                <form action="insertar.php" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="number" name="precio" placeholder="Precio" required>
                     <input type="number" name="stock" placeholder="Stock" required>
@@ -57,8 +57,8 @@ $result = mysqli_query($conn, "SELECT * FROM articulos");
                                 <td>$<?= $row['precio'] ?></td>
                                 <td><?= $row['stock'] ?></td>
                                 <td class="actions">
-                                    <a href="update.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-blue">Editar</a>
-                                    <a href="delete_artcl.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-pink">Eliminar</a>
+                                    <a href="editar.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-blue">Editar</a>
+                                    <a href="eliminar.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-pink">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
