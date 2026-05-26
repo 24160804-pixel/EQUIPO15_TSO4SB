@@ -7,14 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password'];
 
     // 1. Administrador
-    if ($email == "alberto@itoaxaca.edu.mx" && $pass =="alberto") {
+    if ($email == "24160804@itoaxaca.edu.mx" && $pass =="24160804TSO") {
         $_SESSION['usuario'] = $email;
         $_SESSION['rol'] = 'admin';
         header("Location: admin.php");
         exit();
     } 
     // 2. Espectador
-    else if ($email == "carlos@itoaxaca.edu.mx" && $pass == "carlos") {
+    else if ($email == "espectador@itoaxaca.edu.mx" && $pass == "espectador123") {
         $_SESSION['usuario'] = $email;
         $_SESSION['rol'] = 'espectador';
         header("Location: admin.php");
