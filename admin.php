@@ -1,14 +1,11 @@
 <?php
-include("config.php");
-
-// Si no hay sesión, regresa al login
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login.php");
-    exit();
-}
+include("connection.php");
+$con = connection();
+$sql = "SELECT * FROM articulos";
+$query = mysqli_query($con, $sql);
 
 // Consulta los artículos
-$result = mysqli_query($conn, "SELECT * FROM articulos");
+// $result = mysqli_query($conn, "SELECT * FROM articulos");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,7 +47,7 @@ $result = mysqli_query($conn, "SELECT * FROM articulos");
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = mysqli_fetch_array($result)): ?>
+                        <?php while ($row = mysqli_fetch_array($query)): ?>
                             <tr>
                                 <td><?= $row['id_articulo'] ?></td>
                                 <td><?= $row['nombre'] ?></td>
