@@ -1,19 +1,14 @@
 <?php
-session_start();
-// Si el usuario NO es admin, no lo dejes hacer nada aquí
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-    die("ERROR: No tienes permisos para eliminar registros.");
-}
+include("connection.php");
 
-include("config.php");
+$con = connection();
 
-$id = $_GET['id'];
+$id = $_GET["id"];
 
-$sql = "DELETE FROM articulos WHERE id = $id";
+$sql = "DELETE FROM articulos WHERE  id_articulo = $id";
 
-if (mysqli_query($conn, $sql)) {
-    header("Location: admin.php");
-} else {
-    echo "Error al eliminar: " . mysqli_error($conn);
-}
-?>
+$query = mysqli_query($con, $sql);
+
+if($query) {  
+    Header("Location: admin.php");
+};
