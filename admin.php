@@ -1,14 +1,11 @@
 <?php
-include("config.php");
-
-// Si no hay sesión, regresa al login
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login.php");
-    exit();
-}
+include("connection.php");
+$con = connection();
+$sql = "SELECT * FROM articulos";
+$query = mysqli_query($con, $sql);
 
 // Consulta los artículos
-$result = mysqli_query($conn, "SELECT * FROM articulos");
+// $result = mysqli_query($conn, "SELECT * FROM articulos");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +27,7 @@ $result = mysqli_query($conn, "SELECT * FROM articulos");
         <div class="crud-container">
             <div class="form-side card">
                 <h3 class="text-blue">Registrar Artículo</h3>
-                <form action="insert_artc.php" method="POST">
+                <form action="insertar.php" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="number" name="precio" placeholder="Precio" required>
                     <input type="number" name="stock" placeholder="Stock" required>
@@ -50,15 +47,15 @@ $result = mysqli_query($conn, "SELECT * FROM articulos");
                         </tr>
                     </thead>
                     <tbody>
-                        <?php while ($row = mysqli_fetch_array($result)): ?>
+                        <?php while ($row = mysqli_fetch_array($query)): ?>
                             <tr>
-                                <td><?= $row['id_articulo'] ?></td>
+                                <td><?= $row['id'] ?></td>
                                 <td><?= $row['nombre'] ?></td>
                                 <td>$<?= $row['precio'] ?></td>
                                 <td><?= $row['stock'] ?></td>
                                 <td class="actions">
-                                    <a href="update.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-blue">Editar</a>
-                                    <a href="delete_artcl.php?id=<?= $row['id_articulo'] ?>" class="btn-sm btn-pink">Eliminar</a>
+                                    <a href="editar.php?id=<?= $row['id'] ?>" class="btn-sm btn-blue">Editar</a>
+                                    <a href="eliminar.php?id=<?= $row['id'] ?>" class="btn-sm btn-pink">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
