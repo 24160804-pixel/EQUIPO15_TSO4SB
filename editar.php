@@ -3,7 +3,7 @@ include("config.php");
 // Obtenemos el ID del artículo desde la URL
 $id = $_GET['id'];
 // Buscamos los datos de ese artículo específico
-$result = mysqli_query($conn, "SELECT * FROM articulos WHERE id=$id");
+$result = mysqli_query($conn, "SELECT * FROM productos WHERE id=$id");
 $row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
