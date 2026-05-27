@@ -13,7 +13,7 @@ if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'espectador') {
     $db_pass = "auditor123"; // Debe coincidir con la contraseña de MySQL
 }
 
-$conn = mysqli_connect("localhost", $db_user, $db_pass, "tso_practica");
+$conn = mysqli_connect("localhost", $db_user, $db_pass, "superpapeleriatony_equipo_15");
 
 if (!$conn) {
     die("Error de conexión: " . mysqli_connect_error());
