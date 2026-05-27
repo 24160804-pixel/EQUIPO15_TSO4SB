@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 $con = connection();
-$sql = "SELECT * FROM articulos";
+$sql = "SELECT * FROM productos";
 $query = mysqli_query($con, $sql);
 
 // Consulta los artículos
