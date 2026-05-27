@@ -8,7 +8,7 @@ $precio = $_POST['precio'];
 $stock = $_POST['stock'];
 
 // Ejecutamos la sentencia UPDATE de SQL
-$sql = "UPDATE articulos SET nombre='$nombre', precio=$precio, stock=$stock WHERE id=$id";
+$sql = "UPDATE productos SET nombre='$nombre', precio=$precio, stock=$stock WHERE id=$id";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: admin.php"); // Regresar a la tabla si todo salió bien
