@@ -49,10 +49,10 @@ $query = mysqli_query($con, $sql);
                     <tbody>
                         <?php while ($row = mysqli_fetch_array($query)): ?>
                             <tr>
-                                <td><?= $row['id'] ?></td>
-                                <td><?= $row['nombre'] ?></td>
-                                <td>$<?= $row['precio'] ?></td>
-                                <td><?= $row['stock'] ?></td>
+                                <td><?= $row['ID'] ?></td>
+                                <td><?= $row['Producto'] ?></td>
+                                <td>$<?= $row['Precio'] ?></td>
+                                <td><?= $row['Stock'] ?></td>
                                 <td class="actions">
                                     <a href="editar.php?id=<?= $row['id'] ?>" class="btn-sm btn-blue">Editar</a>
                                     <a href="eliminar.php?id=<?= $row['id'] ?>" class="btn-sm btn-pink">Eliminar</a>
