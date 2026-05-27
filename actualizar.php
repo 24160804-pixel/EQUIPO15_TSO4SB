@@ -2,10 +2,10 @@
 include("config.php");
 
 // Recibimos los datos editados del formulario
-$id = $_POST['id'];
-$nombre = $_POST['nombre'];
-$precio = $_POST['precio'];
-$stock = $_POST['stock'];
+$id = $_POST['ID'];
+$nombre = $_POST['ProducTo'];
+$precio = $_POST['Precio'];
+$stock = $_POST['Stock'];
 
 // Ejecutamos la sentencia UPDATE de SQL
 $sql = "UPDATE productos SET nombre='$nombre', precio=$precio, stock=$stock WHERE id=$id";

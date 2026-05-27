@@ -54,8 +54,8 @@ $query = mysqli_query($con, $sql);
                                 <td>$<?= $row['Precio'] ?></td>
                                 <td><?= $row['Stock'] ?></td>
                                 <td class="actions">
-                                    <a href="editar.php?id=<?= $row['id'] ?>" class="btn-sm btn-blue">Editar</a>
-                                    <a href="eliminar.php?id=<?= $row['id'] ?>" class="btn-sm btn-pink">Eliminar</a>
+                                    <a href="editar.php?id=<?= $row['ID'] ?>" class="btn-sm btn-blue">Editar</a>
+                                    <a href="eliminar.php?id=<?= $row['ID'] ?>" class="btn-sm btn-pink">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
