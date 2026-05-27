@@ -6,7 +6,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
 }
 include("config.php");
 $id = $_GET['id'];
-$sql = "DELETE FROM articulos WHERE id = $id";
+$sql = "DELETE FROM productos WHERE id = $id";
 if (mysqli_query($conn, $sql)) {
     header("Location: admin.php");
 } else {
