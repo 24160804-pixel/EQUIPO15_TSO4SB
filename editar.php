@@ -25,9 +25,9 @@ $row = mysqli_fetch_assoc($result);
             <form action="actualizar.php" method="POST">
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
 
-                <input type="text" name="nombre" placeholder="Nombre" value="<?= $row['nombre'] ?>" required>
-                <input type="number" name="precio" placeholder="Precio ($)" value="<?= $row['precio'] ?>" step="0.01" required>
-                <input type="number" name="stock" placeholder="Stock" value="<?= $row['stock'] ?>" required>
+                <input type="text" name="nombre" placeholder="Nombre" value="<?= $row['Producto'] ?>" required>
+                <input type="number" name="precio" placeholder="Precio ($)" value="<?= $row['Precio'] ?>" step="0.01" required>
+                <input type="number" name="stock" placeholder="Stock" value="<?= $row['Stock'] ?>" required>
 
                 <input type="submit" value="Guardar Cambios" class="btn btn-blue">
             </form>
