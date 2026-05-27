@@ -5,7 +5,7 @@ function connection(){
     $user = "dev_user";
     $pass = "administrador123";
 
-    $bd = "tso_practica";
+    $bd = "superpapeleriatony_equipo_15";
 
     $connect = mysqli_connect($host,$user,$pass,$bd);
 
