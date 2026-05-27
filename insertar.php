@@ -9,11 +9,11 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
 include("config.php");
 // ... aquí sigue tu código normal de INSERT ...
 
-$nombre = $_POST['nombre'];
-$precio = $_POST['precio'];
-$stock  = $_POST['stock'];
+$nombre = $_POST['Producto'];
+$precio = $_POST['Precio'];
+$stock  = $_POST['Stock'];
 
-$sql = "INSERT INTO productos (nombre, precio, stock) VALUES ('$nombre', $precio, $stock)";
+$sql = "INSERT INTO productos (Producto, Precio, Stock) VALUES ('$nombre', $precio, $stock)";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: admin.php");
