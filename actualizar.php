@@ -2,13 +2,13 @@
 include("config.php");
 
 // Recibimos los datos editados del formulario
-$id = $_POST['id'];
-$nombre = $_POST['nombre'];
-$precio = $_POST['precio'];
-$stock = $_POST['stock'];
+$id = $_POST['ID'];
+$nombre = $_POST['Producto'];
+$precio = $_POST['Precio'];
+$stock = $_POST['Stock'];
 
 // Ejecutamos la sentencia UPDATE de SQL
-$sql = "UPDATE productos SET nombre='$nombre', precio=$precio, stock=$stock WHERE id=$id";
+$sql = "UPDATE productos SET Producto='$nombre', Precio=$precio, Stock=$stock WHERE ID=$id";
 
 if (mysqli_query($conn, $sql)) {
     header("Location: admin.php"); // Regresar a la tabla si todo salió bien
