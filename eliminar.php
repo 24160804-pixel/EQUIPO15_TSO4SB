@@ -1,15 +1,18 @@
- <?php
-session_start();
-// Si el usuario NO es admin, no lo dejes hacer nada aquí
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-    die("ERROR: No tienes permisos para eliminar registros.");
+<?php
+include("connection.php");
+$con = mysqli_connect("localhost", "dev_user", "administrador123", "superpapeleriatony_equipo_15");
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    
+    // Recuerda que la columna de la llave primaria se llama ID en mayúsculas
+    $sql = "DELETE FROM productos WHERE ID = '$id'";
+    $query = mysqli_query($con, $sql);
+
+    if($query){
+        Header("Location: admin.php");
+    } else {
+        echo "Error al eliminar: " . mysqli_error($con);
+    }
 }
-include("config.php");
-$id = $_GET['ID'];
-$sql = "DELETE FROM productos WHERE ID = $id";
-if (mysqli_query($conn, $sql)) {
-    header("Location: admin.php");
-} else {
-    echo "Error al eliminar: " . mysqli_error($conn);
-}
-?> 
+?>
