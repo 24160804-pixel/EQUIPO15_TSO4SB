@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("config.php");
 $con = connection();
 $sql = "SELECT * FROM productos";
 $query = mysqli_query($con, $sql);
@@ -28,9 +28,9 @@ $query = mysqli_query($con, $sql);
             <div class="form-side card">
                 <h3 class="text-blue">Registrar Artículo</h3>
                 <form action="insertar.php" method="POST">
-                    <input type="text" name="nombre" placeholder="Nombre" required>
-                    <input type="number" name="precio" placeholder="Precio" required>
-                    <input type="number" name="stock" placeholder="Stock" required>
+                    <input type="text" name="Producto" placeholder="Nombre" required>
+                    <input type="number" name="Precio" placeholder="Precio" required>
+                    <input type="number" name="Stock" placeholder="Stock" required>
                     <input type="submit" value="Guardar en Inventario" class="btn btn-green">
                 </form>
             </div>
