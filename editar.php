@@ -20,11 +20,11 @@ $row = mysqli_fetch_array($query);
         <div class="form-side card">
             <h3 class="text-blue">Editar Artículo</h3>
             <form action="actualizar.php" method="POST">
-                <input type="hidden" name="id" value="<?= $row['ID'] ?>">
+                <input type="hidden" name="ID" value="<?= $row['ID'] ?>">
                 
-                <input type="text" name="producto" value="<?= $row['Producto'] ?>" required>
-                <input type="number" step="0.01" name="precio" value="<?= $row['Precio'] ?>" required>
-                <input type="number" name="stock" value="<?= $row['Stock'] ?>" required>
+                <input type="text" name="Producto" value="<?= $row['Producto'] ?>" required>
+                <input type="number" step="0.01" name="Precio" value="<?= $row['Precio'] ?>" required>
+                <input type="number" name="Stock" value="<?= $row['Stock'] ?>" required>
                 <input type="submit" value="Actualizar Cambios" class="btn btn-green">
             </form>
         </div>
