@@ -1,11 +1,29 @@
 <?php
-include("config.php");
-$con = connection();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 1. Control de Privilegios por Roles (Rúbrica de Seguridad)
+$db_user = "dev_user";
+$db_pass = "administrador123";
+
+if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'espectador') {
+    $db_user = "audit_user";
+    $db_pass = "auditor123"; 
+}
+
+// 2. Conectamos usando tu archivo real de la raíz
+include("connection.php"); 
+
+$con = mysqli_connect("localhost", $db_user, $db_pass, "superpapeleriatony_equipo_15");
+
+if (!$con) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
+// 3. Consulta de la tabla con los 50 productos
 $sql = "SELECT * FROM productos";
 $query = mysqli_query($con, $sql);
-
-// Consulta los artículos
-// $result = mysqli_query($conn, "SELECT * FROM articulos");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,6 +43,7 @@ $query = mysqli_query($con, $sql);
 
     <section class="crud-section">
         <div class="crud-container">
+            
             <div class="form-side card">
                 <h3 class="text-blue">Registrar Artículo</h3>
                 <form action="insertar.php" method="POST">
@@ -51,7 +70,7 @@ $query = mysqli_query($con, $sql);
                             <tr>
                                 <td><?= $row['ID'] ?></td>
                                 <td><?= $row['Producto'] ?></td>
-                                <td>$<?= $row['Precio'] ?></td>
+                                <td>$<?= number_format($row['Precio'], 2) ?></td>
                                 <td><?= $row['Stock'] ?></td>
                                 <td class="actions">
                                     <a href="editar.php?id=<?= $row['ID'] ?>" class="btn-sm btn-blue">Editar</a>
@@ -62,6 +81,7 @@ $query = mysqli_query($con, $sql);
                     </tbody>
                 </table>
             </div>
+
         </div>
     </section>
 </body>
