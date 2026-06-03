@@ -7,7 +7,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Papelerías <span class="text-green">TONY</span></div>
+        <div class="logo">SUPERPAPELERIAS <span class="text-green">TONY</span></div>
         <ul class="nav-links">
             <li><a href="#mision">Misión y Visión</a></li>
             <li><a href="#valores">Valores</a></li>
