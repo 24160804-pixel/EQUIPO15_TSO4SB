@@ -34,7 +34,7 @@
     </section>
 
     <section id="valores" class="values-section bg-light">
-        <h2 class="section-title text-blue">Nuestros Valores</h2>
+        <h2 class="section-title text-blue">NUESTROS VALORES</h2>
         <div class="crud-container" style="justify-content: center; gap: 20px;">
             <div class="card"><strong>Honestidad</strong></div>
             <div class="card"><strong>Servicio</strong></div>
