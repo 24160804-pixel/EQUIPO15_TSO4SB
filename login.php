@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-light">
     <div class="login-container">
         <div class="card login-card">
-            <h2 class="text-blue">PANEL DE GESTIÓN</h2>
+            <h2 class="text-blue">TERCERA OPORTUNIDAD TSO LASA</h2>
             <form action="login.php" method="POST">
                 <input type="email" name="correo" placeholder="tunumcontrol@itoaxaca.edu.mx" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
