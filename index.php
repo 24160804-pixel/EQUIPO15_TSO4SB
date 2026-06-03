@@ -16,7 +16,7 @@
     </nav>
 
     <header class="hero">
-        <h1>Bienvenido a Papelerías JUAN CARLOS</h1>
+        <h1>Bienvenido a SUPERPAPALERIAS TONY</h1>
         <p>Todo lo que necesitas para tu oficina y escuela en un solo lugar.</p>
     </header>
 
