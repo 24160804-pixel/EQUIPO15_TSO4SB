@@ -34,7 +34,7 @@ $query = mysqli_query($con, $sql);
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Panel de <span class="text-green">Inventario</span></div>
+        <div class="logo">SUPERPAPELERIAS <span class="text-green">TONY</span></div>
         <ul class="nav-links">
             <li><a href="index.php">Ver Sitio Público</a></li>
             <li><a href="login.php" class="text-pink">Cerrar Sesión</a></li>
@@ -47,7 +47,7 @@ $query = mysqli_query($con, $sql);
             <div class="form-side card">
                 <h3 class="text-blue">Registrar Artículo</h3>
                 <form action="insertar.php" method="POST">
-                    <input type="text" name="Producto" placeholder="Nombre" required>
+                    <input type="text" name="Producto" placeholder="Producto" required>
                     <input type="number" name="Precio" placeholder="Precio" required>
                     <input type="number" name="Stock" placeholder="Stock" required>
                     <input type="submit" value="Guardar en Inventario" class="btn btn-green">

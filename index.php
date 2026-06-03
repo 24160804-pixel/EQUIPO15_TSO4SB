@@ -7,16 +7,16 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Papelerías <span class="text-green">TONY</span></div>
+        <div class="logo">SUPERPAPELERIAS <span class="text-green">TONY</span></div>
         <ul class="nav-links">
             <li><a href="#mision">Misión y Visión</a></li>
             <li><a href="#valores">Valores</a></li>
-            <li><a href="login.php" class="btn-sm btn-blue">Iniciar Sesión</a></li>
+            <li><a href="login.php" class="btn btn-sm btn-blue">Iniciar Sesión</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>Bienvenido a Papelerías JUAN CARLOS</h1>
+        <h1>Bienvenido a SUPERPAPALERIAS TONY</h1>
         <p>Todo lo que necesitas para tu oficina y escuela en un solo lugar.</p>
     </header>
 
@@ -34,7 +34,7 @@
     </section>
 
     <section id="valores" class="values-section bg-light">
-        <h2 class="section-title text-blue">Nuestros Valores</h2>
+        <h2 class="section-title text-blue">NUESTROS VALORES</h2>
         <div class="crud-container" style="justify-content: center; gap: 20px;">
             <div class="card"><strong>Honestidad</strong></div>
             <div class="card"><strong>Servicio</strong></div>
