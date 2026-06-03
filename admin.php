@@ -34,7 +34,7 @@ $query = mysqli_query($con, $sql);
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">PAPELERIAS <span class="text-green">TONY</span></div>
+        <div class="logo">SUPERPAPELERIAS <span class="text-green">TONY</span></div>
         <ul class="nav-links">
             <li><a href="index.php">Ver Sitio Público</a></li>
             <li><a href="login.php" class="text-pink">Cerrar Sesión</a></li>
