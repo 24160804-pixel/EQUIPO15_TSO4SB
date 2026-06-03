@@ -11,7 +11,7 @@
         <ul class="nav-links">
             <li><a href="#mision">Misión y Visión</a></li>
             <li><a href="#valores">Valores</a></li>
-            <li><a href="login.php" class="btn-sm btn-blue">Iniciar Sesión</a></li>
+            <li><a href="login.php" class="btn btn-sm btn-blue">Iniciar Sesión</a></li>
         </ul>
     </nav>
 
