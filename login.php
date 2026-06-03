@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password'];
 
     // 1. Administrador
-    if ($email == "24160804@itoaxaca.edu.mx" && $pass =="123") {
+    if ($email == "24160804@itoaxaca.edu.mx" && $pass =="24160804TSO") {
         $_SESSION['usuario'] = $email;
         $_SESSION['rol'] = 'admin';
         header("Location: admin.php");
